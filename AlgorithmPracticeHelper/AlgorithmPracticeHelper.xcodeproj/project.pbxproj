@@ -15,6 +15,7 @@
 		BF9913CB1DDF0D3B00E36E28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9913C91DDF0D3B00E36E28 /* LaunchScreen.storyboard */; };
 		BF9913D61DDF0D3C00E36E28 /* AlgorithmPracticeHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913D51DDF0D3C00E36E28 /* AlgorithmPracticeHelperTests.m */; };
 		BF9913E11DDF0D3C00E36E28 /* AlgorithmPracticeHelperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913E01DDF0D3C00E36E28 /* AlgorithmPracticeHelperUITests.m */; };
+		BF9913F01DDF9E7A00E36E28 /* AlgorithmProblemData.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913EF1DDF9E7A00E36E28 /* AlgorithmProblemData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		BF9913DC1DDF0D3C00E36E28 /* AlgorithmPracticeHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmPracticeHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9913E01DDF0D3C00E36E28 /* AlgorithmPracticeHelperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmPracticeHelperUITests.m; sourceTree = "<group>"; };
 		BF9913E21DDF0D3C00E36E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF9913EE1DDF9E6E00E36E28 /* AlgorithmProblemData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmProblemData.h; sourceTree = "<group>"; };
+		BF9913EF1DDF9E7A00E36E28 /* AlgorithmProblemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgorithmProblemData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				BF9913C91DDF0D3B00E36E28 /* LaunchScreen.storyboard */,
 				BF9913CC1DDF0D3B00E36E28 /* Info.plist */,
 				BF9913BB1DDF0D3B00E36E28 /* Supporting Files */,
+				BF9913EE1DDF9E6E00E36E28 /* AlgorithmProblemData.h */,
+				BF9913EF1DDF9E7A00E36E28 /* AlgorithmProblemData.m */,
 			);
 			path = AlgorithmPracticeHelper;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				BF9913C31DDF0D3B00E36E28 /* ViewController.m in Sources */,
 				BF9913C01DDF0D3B00E36E28 /* AppDelegate.m in Sources */,
 				BF9913BD1DDF0D3B00E36E28 /* main.m in Sources */,
+				BF9913F01DDF9E7A00E36E28 /* AlgorithmProblemData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

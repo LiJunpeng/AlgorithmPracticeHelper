@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AlgorithmProblemData.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    AlgorithmProblemData *test = [AlgorithmProblemData createWithProblemName:@"test" ProblemDescription:@"dsf"];
+    
+    //NSLog(test.ProblemName);
 }
 
 
