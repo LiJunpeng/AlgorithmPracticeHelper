@@ -19,6 +19,7 @@
     @property(strong, nonatomic) NSString *ProblemHint;
     @property(strong, nonatomic) NSString *ProblemTags;
     @property(strong, nonatomic) NSString *ProblemNotes;
+    @property(nonatomic)  NSInteger ProblemLevel;
 
     - (id)initWithProblemName:(NSString *)name
            ProblemDescription:(NSString *)description;

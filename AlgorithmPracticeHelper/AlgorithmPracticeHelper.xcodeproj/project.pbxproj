@@ -16,6 +16,7 @@
 		BF9913D61DDF0D3C00E36E28 /* AlgorithmPracticeHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913D51DDF0D3C00E36E28 /* AlgorithmPracticeHelperTests.m */; };
 		BF9913E11DDF0D3C00E36E28 /* AlgorithmPracticeHelperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913E01DDF0D3C00E36E28 /* AlgorithmPracticeHelperUITests.m */; };
 		BF9913F01DDF9E7A00E36E28 /* AlgorithmProblemData.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913EF1DDF9E7A00E36E28 /* AlgorithmProblemData.m */; };
+		BF9913F31DDFAFED00E36E28 /* AlgorithmDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913F21DDFAFED00E36E28 /* AlgorithmDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		BF9913E21DDF0D3C00E36E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF9913EE1DDF9E6E00E36E28 /* AlgorithmProblemData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmProblemData.h; sourceTree = "<group>"; };
 		BF9913EF1DDF9E7A00E36E28 /* AlgorithmProblemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgorithmProblemData.m; sourceTree = "<group>"; };
+		BF9913F11DDFAFDF00E36E28 /* AlgorithmDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmDetailViewController.h; sourceTree = "<group>"; };
+		BF9913F21DDFAFED00E36E28 /* AlgorithmDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgorithmDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				BF9913BB1DDF0D3B00E36E28 /* Supporting Files */,
 				BF9913EE1DDF9E6E00E36E28 /* AlgorithmProblemData.h */,
 				BF9913EF1DDF9E7A00E36E28 /* AlgorithmProblemData.m */,
+				BF9913F11DDFAFDF00E36E28 /* AlgorithmDetailViewController.h */,
+				BF9913F21DDFAFED00E36E28 /* AlgorithmDetailViewController.m */,
 			);
 			path = AlgorithmPracticeHelper;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9913F31DDFAFED00E36E28 /* AlgorithmDetailViewController.m in Sources */,
 				BF9913C31DDF0D3B00E36E28 /* ViewController.m in Sources */,
 				BF9913C01DDF0D3B00E36E28 /* AppDelegate.m in Sources */,
 				BF9913BD1DDF0D3B00E36E28 /* main.m in Sources */,
