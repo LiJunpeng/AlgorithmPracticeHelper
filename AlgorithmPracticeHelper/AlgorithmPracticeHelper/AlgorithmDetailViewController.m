@@ -19,9 +19,6 @@
 
 @interface AlgorithmDetailViewController ()
 
-@property (nonatomic, strong) UITableView *problemTable;
-@property (nonatomic, strong) NSMutableArray * problemArray;
-
 @end
 
 @implementation AlgorithmDetailViewController
@@ -30,6 +27,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+        UILabel *problemNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+        problemNameLabel.center = CGPointMake(20,20);
+        problemNameLabel.text = @"fffffff";
+        problemNameLabel.textColor = [UIColor blackColor];
+        [problemNameLabel setBackgroundColor:[UIColor clearColor]]; // transparent label background
+        [problemNameLabel setFont:[UIFont boldSystemFontOfSize:20.0]];
+        [self.view addSubview:problemNameLabel];
     
 }
 

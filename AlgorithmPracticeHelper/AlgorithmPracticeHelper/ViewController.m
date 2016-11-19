@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AlgorithmProblemData.h"
+#import "AlgorithmDetailViewController.h"
 
 @interface ViewController ()
 
@@ -40,9 +41,21 @@
     [self.view addSubview:_problemTable];
     
     
-    ViewController *vc = [[ViewController alloc]
-                          initWithNibName:@"AlgorithmDetailViewController" bundle:nil];
-    [self presentViewController:vc animated:YES completion:nil];
+   // ViewController *vc = [[ViewController alloc] initWithNibName:@"AlgorithmDetailViewController" bundle:nil];
+    
+    AlgorithmDetailViewController *detailPage = [[AlgorithmDetailViewController alloc] init];
+//    
+//    AlgorithmDetailViewController *detailPage = [self.storyboard instantiateViewControllerWithIdentifier:@"detailView"];
+//    
+//    [self presentViewController:detailPage animated:YES completion:nil];
+   [self presentViewController:detailPage animated:YES completion:nil];
+    
+    
+//    NSString *storyboardName = @"Main";
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+//    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"detailView"];
+//    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 

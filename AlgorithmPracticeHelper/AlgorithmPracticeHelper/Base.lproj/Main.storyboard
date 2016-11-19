@@ -29,7 +29,7 @@
         <!--Algorithm Detail View Controller-->
         <scene sceneID="zuF-dt-d4x">
             <objects>
-                <viewController id="PKH-an-mHd" customClass="AlgorithmDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailView" id="PKH-an-mHd" customClass="AlgorithmDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aHb-yr-0RH"/>
                         <viewControllerLayoutGuide type="bottom" id="PT3-cF-KwH"/>
@@ -43,25 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3K5-qv-vlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837.5999999999999" y="126.38680659670166"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xkp-gQ-dZf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kjk-BJ-BR6" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dfi-fJ-nre">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PKH-an-mHd" kind="relationship" relationship="rootViewController" id="S0r-AL-LVe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Hd-B5-6HA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="898.39999999999998" y="126.38680659670166"/>
+            <point key="canvasLocation" x="1322" y="119"/>
         </scene>
     </scenes>
 </document>
