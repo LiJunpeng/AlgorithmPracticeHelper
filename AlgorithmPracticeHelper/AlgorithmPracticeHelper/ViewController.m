@@ -8,12 +8,16 @@
 
 #import "ViewController.h"
 #import "AlgorithmProblemData.h"
+#import "detailTabViewController.h"
 #import "AlgorithmDetailViewController.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) UITableView *problemTable;
+@property (nonatomic, strong) NSMutableArray * problemNameArray;
 @property (nonatomic, strong) NSMutableArray * problemArray;
+
+@property NSString* serverURL;
 
 @end
 
@@ -26,21 +30,11 @@
 //    AlgorithmProblemData *test = [AlgorithmProblemData createWithProblemName:@"test" ProblemDescription:@"dsf"];
 //    test.ProblemDescription = @"safdsafsdafadsafsdfadafasfasdffas";
     
+    _serverURL = @"http://de4212b5.ngrok.io/api/v1/AlgoProblems/";
+    
     _problemArray = [[NSMutableArray alloc] init];
-    //[_problemArray addObject:test];
-    
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://51ffc4d3.ngrok.io/api/v1/AlgoProblems"]];
-    
-    __block NSDictionary *json;
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               json = [NSJSONSerialization JSONObjectWithData:data
-                                                                      options:0
-                                                                        error:nil];
-                               NSLog(@"Async JSON: %@", json);
-                           }];
-    
+    _problemNameArray = [[NSMutableArray alloc] init];
+    [self loadNameList];
     
     _problemTable = [[UITableView alloc]init];
     _problemTable.frame = CGRectMake(0,0,[[UIScreen mainScreen] bounds].size.width,[[UIScreen mainScreen] bounds].size.height);
@@ -48,7 +42,7 @@
     _problemTable.delegate=self;
    // _problemTable.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [_problemTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    [_problemTable reloadData];
+    //[_problemTable reloadData];
     [self.view addSubview:_problemTable];
 
 //    AlgorithmDetailViewController *detailPage = [[AlgorithmDetailViewController alloc] init];
@@ -57,6 +51,71 @@
     
 }
 
+
+- (void) loadNameList {
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:_serverURL]];
+    
+    NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        dispatch_async( dispatch_get_main_queue(),
+                       ^{
+                           NSError *jsonError;
+                           NSMutableDictionary *parsedJSONArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+                           
+                           NSArray *nameList = [[parsedJSONArray objectForKey:@"name_list"] componentsSeparatedByString:@"|"];
+                           
+                           for(int i = 0; i < nameList.count - 1; i++) {
+                               _problemNameArray[i] = nameList[i];
+                               [self loadProblemToArray:nameList[i]];
+                           }
+                       });
+    }];
+    
+    [task resume];
+}
+
+- (void) loadProblemToArray:(NSString *) name {
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    NSString *formattedName = [name stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    NSString *urlString = [_serverURL stringByAppendingString:formattedName];
+
+    [request setURL:[NSURL URLWithString:urlString]];
+    
+    NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        dispatch_async( dispatch_get_main_queue(),
+           ^{
+               NSError *jsonError;
+               NSMutableDictionary *parsedJSONArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+               
+               AlgorithmProblemData *data = [AlgorithmProblemData
+                 createWithProblemName:[parsedJSONArray objectForKey:@"problemName"]
+                 ProblemPlatform:[parsedJSONArray objectForKey:@"sourcePlatform"]
+                 ProblemPlatformNumber:[parsedJSONArray objectForKey:@"platformNumber"]
+                 ProblemLevel:[parsedJSONArray objectForKey:@"level"]
+                 ProblemDescription:[parsedJSONArray objectForKey:@"problemDescription"]
+                 ProblemSolution:[parsedJSONArray objectForKey:@"solution"]
+                 ProblemNotes:[parsedJSONArray objectForKey:@"note"]];
+               
+               [_problemArray addObject:data];
+               [_problemTable reloadData];
+           });
+    }];
+    
+    [task resume];
+}
+
+- ( NSURLSession * )getURLSession
+{
+    static NSURLSession *session = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once( &onceToken,
+                  ^{
+                      NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+                      session = [NSURLSession sessionWithConfiguration:configuration];
+                  } );
+    
+    return session;
+}
 
 
 
@@ -87,7 +146,8 @@
     cell.frame = CGRectMake(0,0,[[UIScreen mainScreen] bounds].size.width,40);
     AlgorithmProblemData *data = _problemArray[indexPath.row];
     cell.textLabel.text = data.ProblemName;
-    
+    //cell.textLabel.text = @"fff";
+   // NSLog(@"%@", [_problemArray[indexPath.row] objectForKey:@"problemName"]);
     
 //    UILabel *problemNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 10)];
 //    problemNameLabel.center = CGPointMake(0,0);
@@ -148,12 +208,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Your custom operation
-    NSLog(@"click %d", indexPath.row);
+//    AlgorithmDetailViewController *detailPage = [[AlgorithmDetailViewController alloc] init];
+//    detailPage.problemData = [_problemArray objectAtIndex:indexPath.row];
+//    [self.navigationController pushViewController:detailPage animated:YES];
     
-    
-    AlgorithmDetailViewController *detailPage = [[AlgorithmDetailViewController alloc] init];
-    detailPage.problemData = [_problemArray objectAtIndex:indexPath.row];
+    detailTabViewController *detailPage = [[detailTabViewController alloc] init];
+    //detailPage.problemData = [_problemArray objectAtIndex:indexPath.row];
+    [detailPage setData:[_problemArray objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:detailPage animated:YES];
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

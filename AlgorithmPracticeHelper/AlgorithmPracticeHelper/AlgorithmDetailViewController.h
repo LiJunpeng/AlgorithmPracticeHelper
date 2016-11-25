@@ -14,7 +14,10 @@
 
 @interface AlgorithmDetailViewController: UIViewController
 
-@property(strong, nonatomic) AlgorithmProblemData *problemData;
+//@property(strong, nonatomic) AlgorithmProblemData *problemData;
+@property(strong, nonatomic) NSString* name;
+@property(strong, nonatomic) NSString* level;
+@property(strong, nonatomic) NSString* Description;
 
 @end
 

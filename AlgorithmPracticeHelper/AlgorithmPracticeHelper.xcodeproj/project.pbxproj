@@ -17,6 +17,7 @@
 		BF9913E11DDF0D3C00E36E28 /* AlgorithmPracticeHelperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913E01DDF0D3C00E36E28 /* AlgorithmPracticeHelperUITests.m */; };
 		BF9913F01DDF9E7A00E36E28 /* AlgorithmProblemData.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913EF1DDF9E7A00E36E28 /* AlgorithmProblemData.m */; };
 		BF9913F31DDFAFED00E36E28 /* AlgorithmDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913F21DDFAFED00E36E28 /* AlgorithmDetailViewController.m */; };
+		BFDBB3831DE801A300E38AB9 /* detailTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDBB3821DE801A300E38AB9 /* detailTabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		BF9913EF1DDF9E7A00E36E28 /* AlgorithmProblemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgorithmProblemData.m; sourceTree = "<group>"; };
 		BF9913F11DDFAFDF00E36E28 /* AlgorithmDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmDetailViewController.h; sourceTree = "<group>"; };
 		BF9913F21DDFAFED00E36E28 /* AlgorithmDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgorithmDetailViewController.m; sourceTree = "<group>"; };
+		BFDBB3811DE8019900E38AB9 /* detailTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = detailTabViewController.h; sourceTree = "<group>"; };
+		BFDBB3821DE801A300E38AB9 /* detailTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				BF9913EF1DDF9E7A00E36E28 /* AlgorithmProblemData.m */,
 				BF9913F11DDFAFDF00E36E28 /* AlgorithmDetailViewController.h */,
 				BF9913F21DDFAFED00E36E28 /* AlgorithmDetailViewController.m */,
+				BFDBB3811DE8019900E38AB9 /* detailTabViewController.h */,
+				BFDBB3821DE801A300E38AB9 /* detailTabViewController.m */,
 			);
 			path = AlgorithmPracticeHelper;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 					BF9913B71DDF0D3B00E36E28 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 5M33A8S27U;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					BF9913D01DDF0D3C00E36E28 = {
@@ -358,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9913F31DDFAFED00E36E28 /* AlgorithmDetailViewController.m in Sources */,
+				BFDBB3831DE801A300E38AB9 /* detailTabViewController.m in Sources */,
 				BF9913C31DDF0D3B00E36E28 /* ViewController.m in Sources */,
 				BF9913C01DDF0D3B00E36E28 /* AppDelegate.m in Sources */,
 				BF9913BD1DDF0D3B00E36E28 /* main.m in Sources */,
@@ -506,6 +513,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Louis.AlgorithmPracticeHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -519,6 +527,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Louis.AlgorithmPracticeHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
