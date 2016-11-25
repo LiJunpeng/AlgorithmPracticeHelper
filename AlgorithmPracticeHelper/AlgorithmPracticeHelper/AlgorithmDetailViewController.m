@@ -27,12 +27,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+        [self.view setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:1.0]];
         UILabel *problemNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-        problemNameLabel.center = CGPointMake(20,20);
-        problemNameLabel.text = @"fffffff";
-        problemNameLabel.textColor = [UIColor blackColor];
-        [problemNameLabel setBackgroundColor:[UIColor clearColor]]; // transparent label background
-        [problemNameLabel setFont:[UIFont boldSystemFontOfSize:20.0]];
+        problemNameLabel.center = CGPointMake(140,140);
+        problemNameLabel.text = _problemData.ProblemName;
+       // problemNameLabel.textColor = [UIColor blackColor];
+        //[problemNameLabel setBackgroundColor:[UIColor clearColor]]; // transparent label background
+        [problemNameLabel setFont:[UIFont boldSystemFontOfSize:24.0]];
         [self.view addSubview:problemNameLabel];
     
 }

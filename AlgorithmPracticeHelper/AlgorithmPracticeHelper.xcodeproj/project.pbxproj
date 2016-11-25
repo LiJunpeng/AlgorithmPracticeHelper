@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CC591F4623F941B568B3DAB /* Pods_AlgorithmPracticeHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B1E76831EB865BDA39AC27 /* Pods_AlgorithmPracticeHelper.framework */; };
 		BF9913BD1DDF0D3B00E36E28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913BC1DDF0D3B00E36E28 /* main.m */; };
 		BF9913C01DDF0D3B00E36E28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913BF1DDF0D3B00E36E28 /* AppDelegate.m */; };
 		BF9913C31DDF0D3B00E36E28 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913C21DDF0D3B00E36E28 /* ViewController.m */; };
@@ -36,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B2EBE8344135AC7CF1FD587 /* Pods-AlgorithmPracticeHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlgorithmPracticeHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlgorithmPracticeHelper/Pods-AlgorithmPracticeHelper.release.xcconfig"; sourceTree = "<group>"; };
+		91B1E76831EB865BDA39AC27 /* Pods_AlgorithmPracticeHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlgorithmPracticeHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92165F2B30A1E74215508757 /* Pods-AlgorithmPracticeHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlgorithmPracticeHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlgorithmPracticeHelper/Pods-AlgorithmPracticeHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		BF9913B81DDF0D3B00E36E28 /* AlgorithmPracticeHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlgorithmPracticeHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9913BC1DDF0D3B00E36E28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF9913BE1DDF0D3B00E36E28 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CC591F4623F941B568B3DAB /* Pods_AlgorithmPracticeHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7352C7E07F84B39C682A754B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91B1E76831EB865BDA39AC27 /* Pods_AlgorithmPracticeHelper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		834F0F96C04D242FC2630CE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92165F2B30A1E74215508757 /* Pods-AlgorithmPracticeHelper.debug.xcconfig */,
+				8B2EBE8344135AC7CF1FD587 /* Pods-AlgorithmPracticeHelper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BF9913AF1DDF0D3B00E36E28 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +111,8 @@
 				BF9913D41DDF0D3C00E36E28 /* AlgorithmPracticeHelperTests */,
 				BF9913DF1DDF0D3C00E36E28 /* AlgorithmPracticeHelperUITests */,
 				BF9913B91DDF0D3B00E36E28 /* Products */,
+				834F0F96C04D242FC2630CE2 /* Pods */,
+				7352C7E07F84B39C682A754B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF9913E51DDF0D3C00E36E28 /* Build configuration list for PBXNativeTarget "AlgorithmPracticeHelper" */;
 			buildPhases = (
+				9B9819220D35918F24CEE4B8 /* [CP] Check Pods Manifest.lock */,
 				BF9913B41DDF0D3B00E36E28 /* Sources */,
 				BF9913B51DDF0D3B00E36E28 /* Frameworks */,
 				BF9913B61DDF0D3B00E36E28 /* Resources */,
+				90EF738A51922EBED946124F /* [CP] Embed Pods Frameworks */,
+				6366913C543A2444A268566F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,6 +303,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6366913C543A2444A268566F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlgorithmPracticeHelper/Pods-AlgorithmPracticeHelper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90EF738A51922EBED946124F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlgorithmPracticeHelper/Pods-AlgorithmPracticeHelper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B9819220D35918F24CEE4B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF9913B41DDF0D3B00E36E28 /* Sources */ = {
@@ -423,6 +498,7 @@
 		};
 		BF9913E61DDF0D3C00E36E28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92165F2B30A1E74215508757 /* Pods-AlgorithmPracticeHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5M33A8S27U;
@@ -435,6 +511,7 @@
 		};
 		BF9913E71DDF0D3C00E36E28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B2EBE8344135AC7CF1FD587 /* Pods-AlgorithmPracticeHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5M33A8S27U;

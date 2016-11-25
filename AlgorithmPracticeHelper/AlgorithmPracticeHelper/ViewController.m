@@ -23,12 +23,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    AlgorithmProblemData *test = [AlgorithmProblemData createWithProblemName:@"test" ProblemDescription:@"dsf"];
-    test.ProblemDescription = @"safdsafsdafadsafsdfadafasfasdffas";
+//    AlgorithmProblemData *test = [AlgorithmProblemData createWithProblemName:@"test" ProblemDescription:@"dsf"];
+//    test.ProblemDescription = @"safdsafsdafadsafsdfadafasfasdffas";
     
     _problemArray = [[NSMutableArray alloc] init];
-    [_problemArray addObject:test];
+    //[_problemArray addObject:test];
     
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://51ffc4d3.ngrok.io/api/v1/AlgoProblems"]];
+    
+    __block NSDictionary *json;
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                               json = [NSJSONSerialization JSONObjectWithData:data
+                                                                      options:0
+                                                                        error:nil];
+                               NSLog(@"Async JSON: %@", json);
+                           }];
     
     
     _problemTable = [[UITableView alloc]init];
@@ -39,22 +50,10 @@
     [_problemTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     [_problemTable reloadData];
     [self.view addSubview:_problemTable];
-    
-    
-   // ViewController *vc = [[ViewController alloc] initWithNibName:@"AlgorithmDetailViewController" bundle:nil];
-    
-    AlgorithmDetailViewController *detailPage = [[AlgorithmDetailViewController alloc] init];
+
+//    AlgorithmDetailViewController *detailPage = [[AlgorithmDetailViewController alloc] init];
 //    
-//    AlgorithmDetailViewController *detailPage = [self.storyboard instantiateViewControllerWithIdentifier:@"detailView"];
-//    
-//    [self presentViewController:detailPage animated:YES completion:nil];
-   [self presentViewController:detailPage animated:YES completion:nil];
-    
-    
-//    NSString *storyboardName = @"Main";
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
-//    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"detailView"];
-//    [self presentViewController:vc animated:YES completion:nil];
+//    [self.navigationController pushViewController:detailPage animated:YES];
     
 }
 
@@ -72,7 +71,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 50;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -149,7 +148,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Your custom operation
-    NSLog(@"%d", indexPath.row);
+    NSLog(@"click %d", indexPath.row);
+    
+    
+    AlgorithmDetailViewController *detailPage = [[AlgorithmDetailViewController alloc] init];
+    detailPage.problemData = [_problemArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:detailPage animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

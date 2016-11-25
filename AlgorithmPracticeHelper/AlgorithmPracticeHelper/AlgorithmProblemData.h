@@ -12,21 +12,29 @@
     @interface AlgorithmProblemData : NSObject
 
     //@property(nonatomic)  NSInteger dataID;
-    @property(strong, nonatomic) NSString *ProblemIdentifier;  // eg: leetcode 123
     @property(strong, nonatomic) NSString *ProblemName;  // eg: 2sum
+    @property(strong, nonatomic) NSString *ProblemPlatform;  // eg: leetcode
+    @property(strong, nonatomic) NSString *ProblemPlatformNumber;  // eg: 1
+    @property(strong, nonatomic) NSString *ProblemLevel;  // eg: medium
     @property(strong, nonatomic) NSString *ProblemDescription;
-    @property(strong, nonatomic) NSString *ProblemAnswer;
-    @property(strong, nonatomic) NSString *ProblemHint;
-    @property(strong, nonatomic) NSString *ProblemTags;
+    @property(strong, nonatomic) NSString *ProblemSolution;
     @property(strong, nonatomic) NSString *ProblemNotes;
-    @property(nonatomic)  NSInteger ProblemLevel;
 
     - (id)initWithProblemName:(NSString *)name
-           ProblemDescription:(NSString *)description;
+              ProblemPlatform:(NSString *)platform
+        ProblemPlatformNumber:(NSString *)platform_number
+                 ProblemLevel:(NSString *)level
+           ProblemDescription:(NSString *)description
+              ProblemSolution:(NSString *)solution
+                 ProblemNotes:(NSString *)note;
 
     +(id) createWithProblemName:(NSString *)name
-                     ProblemDescription:(NSString *)description;
-
+                ProblemPlatform:(NSString *)platform
+          ProblemPlatformNumber:(NSString *)platform_number
+                   ProblemLevel:(NSString *)level
+             ProblemDescription:(NSString *)description
+                ProblemSolution:(NSString *)solution
+                   ProblemNotes:(NSString *)note;
 
 
 

@@ -10,9 +10,11 @@
 #define AlgorithmDetailViewController_h
 
 #import <UIKit/UIKit.h>
+#import "AlgorithmProblemData.h"
 
 @interface AlgorithmDetailViewController: UIViewController
 
+@property(strong, nonatomic) AlgorithmProblemData *problemData;
 
 @end
 

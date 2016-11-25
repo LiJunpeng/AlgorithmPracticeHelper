@@ -11,16 +11,48 @@
 
 @implementation AlgorithmProblemData
 
-  - (id)initWithProblemName:(NSString *)name ProblemDescription:(NSString *)description{
+- (id)initWithProblemName:(NSString *)name
+          ProblemPlatform:(NSString *)platform
+    ProblemPlatformNumber:(NSString *)platform_number
+             ProblemLevel:(NSString *)level
+       ProblemDescription:(NSString *)description
+          ProblemSolution:(NSString *)solution
+             ProblemNotes:(NSString *)note{
     self.ProblemName = name;
+    self.ProblemPlatform = platform;
+    self.ProblemPlatformNumber = platform_number;
+    self.ProblemLevel = level;
     self.ProblemDescription = description;
+    self.ProblemSolution = solution;
+    self.ProblemNotes = note;
     return self;
   }
 
 
-  +(id) createWithProblemName:(NSString *)name ProblemDescription:(NSString *)description {
-    return [[self alloc] initWithProblemName:name ProblemDescription:description];
++(id) createWithProblemName:(NSString *)name
+            ProblemPlatform:(NSString *)platform
+      ProblemPlatformNumber:(NSString *)platform_number
+               ProblemLevel:(NSString *)level
+         ProblemDescription:(NSString *)description
+            ProblemSolution:(NSString *)solution
+               ProblemNotes:(NSString *)note; {
+    return [[self alloc] initWithProblemName:name
+                             ProblemPlatform:(NSString *)platform
+                       ProblemPlatformNumber:platform_number
+                                ProblemLevel:level
+                          ProblemDescription:description
+                             ProblemSolution:solution
+                                ProblemNotes:note];
   }
+
+
+//ProblemPlatform:(NSString *)platform
+//ProblemPlatformNumber:(NSString *)platform_number
+//ProblemLevel:(NSString *)level
+//ProblemDescription:(NSString *)description
+//ProblemSolution:(NSString *)solution
+//ProblemNotes:(NSString *)note;
+
 
 //// init with multiple parameters
 //- (id)initWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSInteger)age{
