@@ -18,6 +18,9 @@
 		BF9913F01DDF9E7A00E36E28 /* AlgorithmProblemData.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913EF1DDF9E7A00E36E28 /* AlgorithmProblemData.m */; };
 		BF9913F31DDFAFED00E36E28 /* AlgorithmDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9913F21DDFAFED00E36E28 /* AlgorithmDetailViewController.m */; };
 		BFDBB3831DE801A300E38AB9 /* detailTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDBB3821DE801A300E38AB9 /* detailTabViewController.m */; };
+		BFDBB3861DEAB36300E38AB9 /* SolutionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDBB3851DEAB36300E38AB9 /* SolutionViewController.m */; };
+		BFDBB3891DEAD20B00E38AB9 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDBB3881DEAD20B00E38AB9 /* QRCodeViewController.m */; };
+		BFDBB38B1DEAFEE200E38AB9 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFDBB38A1DEAFEE200E38AB9 /* beep.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,11 @@
 		BF9913F21DDFAFED00E36E28 /* AlgorithmDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgorithmDetailViewController.m; sourceTree = "<group>"; };
 		BFDBB3811DE8019900E38AB9 /* detailTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = detailTabViewController.h; sourceTree = "<group>"; };
 		BFDBB3821DE801A300E38AB9 /* detailTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailTabViewController.m; sourceTree = "<group>"; };
+		BFDBB3841DEAB35200E38AB9 /* SolutionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolutionViewController.h; sourceTree = "<group>"; };
+		BFDBB3851DEAB36300E38AB9 /* SolutionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolutionViewController.m; sourceTree = "<group>"; };
+		BFDBB3871DEAD1EB00E38AB9 /* QRCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		BFDBB3881DEAD20B00E38AB9 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		BFDBB38A1DEAFEE200E38AB9 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +140,7 @@
 		BF9913BA1DDF0D3B00E36E28 /* AlgorithmPracticeHelper */ = {
 			isa = PBXGroup;
 			children = (
+				BFDBB38A1DEAFEE200E38AB9 /* beep.mp3 */,
 				BF9913BE1DDF0D3B00E36E28 /* AppDelegate.h */,
 				BF9913BF1DDF0D3B00E36E28 /* AppDelegate.m */,
 				BF9913C11DDF0D3B00E36E28 /* ViewController.h */,
@@ -146,6 +155,10 @@
 				BF9913F21DDFAFED00E36E28 /* AlgorithmDetailViewController.m */,
 				BFDBB3811DE8019900E38AB9 /* detailTabViewController.h */,
 				BFDBB3821DE801A300E38AB9 /* detailTabViewController.m */,
+				BFDBB3841DEAB35200E38AB9 /* SolutionViewController.h */,
+				BFDBB3851DEAB36300E38AB9 /* SolutionViewController.m */,
+				BFDBB3871DEAD1EB00E38AB9 /* QRCodeViewController.h */,
+				BFDBB3881DEAD20B00E38AB9 /* QRCodeViewController.m */,
 			);
 			path = AlgorithmPracticeHelper;
 			sourceTree = "<group>";
@@ -291,6 +304,7 @@
 			files = (
 				BF9913CB1DDF0D3B00E36E28 /* LaunchScreen.storyboard in Resources */,
 				BF9913C81DDF0D3B00E36E28 /* Assets.xcassets in Resources */,
+				BFDBB38B1DEAFEE200E38AB9 /* beep.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +383,8 @@
 				BF9913C01DDF0D3B00E36E28 /* AppDelegate.m in Sources */,
 				BF9913BD1DDF0D3B00E36E28 /* main.m in Sources */,
 				BF9913F01DDF9E7A00E36E28 /* AlgorithmProblemData.m in Sources */,
+				BFDBB3891DEAD20B00E38AB9 /* QRCodeViewController.m in Sources */,
+				BFDBB3861DEAB36300E38AB9 /* SolutionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

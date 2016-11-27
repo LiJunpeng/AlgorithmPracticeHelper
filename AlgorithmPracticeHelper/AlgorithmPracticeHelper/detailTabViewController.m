@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DetailTabViewController.h"
 #import "AlgorithmDetailViewController.h"
+#import "SolutionViewController.h"
 
 @interface detailTabViewController ()
 
@@ -31,11 +32,12 @@
     algorithDetailPage.Description = _problemData.ProblemDescription;
     
     
-    AlgorithmDetailViewController *detail_two = [[AlgorithmDetailViewController alloc] init];
+    SolutionViewController *solutionPage = [[SolutionViewController alloc] init];
+    solutionPage.solution = _problemData.ProblemSolution;
+    solutionPage.note = _problemData.ProblemNotes;
     
     
-    
-    NSArray *viewControllers = [NSArray arrayWithObjects:algorithDetailPage, detail_two, nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:algorithDetailPage, solutionPage, nil];
     [self setViewControllers:viewControllers animated:NO];
     
     [[self.viewControllers objectAtIndex:0] setTitle: @"Problem"];

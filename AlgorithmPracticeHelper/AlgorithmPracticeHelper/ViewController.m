@@ -10,6 +10,7 @@
 #import "AlgorithmProblemData.h"
 #import "detailTabViewController.h"
 #import "AlgorithmDetailViewController.h"
+#import "QRCodeViewController.h"
 
 @interface ViewController ()
 
@@ -30,7 +31,7 @@
 //    AlgorithmProblemData *test = [AlgorithmProblemData createWithProblemName:@"test" ProblemDescription:@"dsf"];
 //    test.ProblemDescription = @"safdsafsdafadsafsdfadafasfasdffas";
     
-    _serverURL = @"http://de4212b5.ngrok.io/api/v1/AlgoProblems/";
+    _serverURL = @"http://0c8f724d.ngrok.io/api/v1/AlgoProblems/";
     
     _problemArray = [[NSMutableArray alloc] init];
     _problemNameArray = [[NSMutableArray alloc] init];
@@ -40,15 +41,16 @@
     _problemTable.frame = CGRectMake(0,0,[[UIScreen mainScreen] bounds].size.width,[[UIScreen mainScreen] bounds].size.height);
     _problemTable.dataSource=self;
     _problemTable.delegate=self;
-   // _problemTable.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [_problemTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    //[_problemTable reloadData];
     [self.view addSubview:_problemTable];
-
-//    AlgorithmDetailViewController *detailPage = [[AlgorithmDetailViewController alloc] init];
-//    
-//    [self.navigationController pushViewController:detailPage animated:YES];
     
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(QRCode)];
+    
+}
+
+- (void) QRCode {
+    QRCodeViewController *QRCodePage = [[QRCodeViewController alloc] init];
+    [self.navigationController pushViewController:QRCodePage animated:YES];
 }
 
 
